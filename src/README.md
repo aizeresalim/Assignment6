@@ -1,0 +1,11 @@
+The `MyGraph` class represents a graph data structure and provides methods to add edges between vertices, perform Dijkstra's algorithm to find shortest paths, and perform Breadth-First Search (BFS) starting from a given vertex.
+
+The `MyGraph` constructor initializes a new instance of the class. It creates an empty graph using a `HashMap` to store the vertices and their corresponding edges.
+
+The `addEdge` method adds a weighted edge between two vertices in the graph. It creates a new `Edge` object with the given source, destination, and weight. It then adds the destination vertex to the adjacency list of the source vertex with the corresponding weight. If the source vertex is not already in the graph, it adds an entry to the `HashMap` and initializes an empty list of edges. Finally, it adds the edge to the list of edges for the source vertex.
+
+The `dijkstra` method performs Dijkstra's algorithm to find the shortest paths from a given starting vertex to all other vertices in the graph. It initializes a `distances` map with all vertices as keys and sets their initial distances to infinity (represented by `Double.MAX_VALUE`). The distance of the starting vertex is set to 0. It uses a `PriorityQueue` to store the vertices based on their distances. The algorithm iteratively selects the vertex with the minimum distance from the queue, updates the distances of its neighboring vertices, and adds them to the queue if their distances are updated. Finally, it returns the `distances` map containing the shortest distances from the starting vertex to all other vertices.
+
+The `BFS` method performs Breadth-First Search (BFS) starting from a given vertex. It uses a `visited` set to keep track of visited vertices and a `queue` to store vertices for traversal. It starts by adding the starting vertex to the visited set and enqueueing it. It then iteratively dequeues vertices from the queue, prints the value of the current vertex, and enqueues its unvisited neighbors. This process continues until the queue becomes empty.
+
+In summary, the `MyGraph` class provides functionality to create a graph, add edges between vertices, find shortest paths using Dijkstra's algorithm, and traverse the graph using BFS.
